@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <title>SPIKS test - Alex Fokin - 15-02-2024</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header">
+      <div class="header__logo">
+        <a href="#">
+          <img src="assets/img/logo-marketplace.png" alt="Company logo">
+        </a>
+      </div>
+      <div class="header__search">
+        <input class="header__search-input" type="text" placeholder="Search for a product, flower, etc.">
+      </div>
+      <div class="header__buttons">
+        <button class="btn-primary active">
+          <span>Buds</span>
+        </button>
+        <button class="btn-primary">
+          <span>Edible</span>
+        </button>
+        <button class="btn-primary">
+          <span>Non Edible</span>
+        </button>
+        <button class="btn-primary">
+          <span>Concentrate</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="price-range">
+      <div class="container d-flex -row">
+        <div class="data-view d-flex -row">
+          <div class="data-view__item">
+            <h5>Price Range</h5>
+            <div class="roller">
+              <div class="line-box">
+                <div class="line" style="width: 64%;">
+                  <div id="tt-001" class="tooltip">$234</div>
+                  <div class="roll">
+                    <a href="#tt-001"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info d-flex -row">
+              <div class="info__box">$234</div>
+              <div class="info__box unactive">$9999</div>
+            </div>
+          </div>
+          <div class="data-view__item">
+            <h5>THC, %</h5>
+            <div class="roller">
+              <div class="line-box">
+                <div class="line" style="width: 65%;">
+                  <div id="tt-002" class="tooltip">$65%</div>
+                  <div class="roll">
+                    <a href="#tt-002"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info d-flex -row">
+              <div class="info__box"></div>
+              <div class="info__box unactive">65%</div>
+            </div>
+          </div>
+          <div class="data-view__item">
+            <h5>CBD, %</h5>
+            <div class="roller">
+              <div class="line-box">
+                <div class="line" style="width: 65%;">
+                  <div id="tt-003" class="tooltip">$65%</div>
+                  <div class="roll">
+                    <a href="#tt-003"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info d-flex -row">
+              <div class="info__box"></div>
+              <div class="info__box unactive">65%</div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-category">
+          <a href="#filter-popup-link">
+            <img src="assets/img/icon-filter-category.png" alt="Filter Category Button">
+          </a>
+          <div id="filter-popup-link" class="filter-popup">
+            <div class="wrapper">
+              <h3>Sort by:</h3>
+              <ul class="filter__list">
+                <li class="filter__list-item date">
+                  Date (New first)
+                </li>
+                <li class="filter__list-item date">
+                  Date (Old first)
+                </li>
+                <li class="filter__list-item price-h">
+                  Price (High first)
+                </li>
+                <li class="filter__list-item price-l">
+                  Price (Low first)
+                </li>
+                <li class="filter__list-item thc-h">
+                  Total THC (High first)
+                </li>
+                <li class="filter__list-item thc-l">
+                  Total THC (Low first)
+                </li>
+                <li class="filter__list-item cbd-h">
+                  Total CBD (High first)
+                </li>
+                <li class="filter__list-item cbd-l">
+                  Total CBD (Low first)
+                </li>
+              </ul>
+            </div>
+            <a class="btn-close" href="#">X</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="filters-view">
+      <div class="container d-flex -row">
+        <h6>1034,5 Results</h6>
+        <div class="filter-value">100% Indica</div>
+        <div class="filter-value">>50% Indica</div>
+        <div class="filter-value">Indoor</div>
+        <div class="filter-value">Flower</div>
+        <div class="filter-value">Michigan</div>
+        <div class="filter-value">Distributor</div>
+      </div>
+    </section>
+    <section class="multi-cols">
+      <div class="container">
+        <aside class="classification">
+
+          <div class="dropdown-box">
+            <input class="switch" type="checkbox">
+            <h3>Classification</h3>
+            <div class="dropdown-box__body">
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>100% Indica</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>100% Sativa</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>>50% Indica</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>>50% Sativa</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="dropdown-box">
+            <input class="switch" type="checkbox">
+            <h3>Production Method</h3>
+            <div class="dropdown-box__body">
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Indoor</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Outdoor</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Greenhouse</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Light Deprivation</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Mixed Light</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Other</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="dropdown-box">
+            <input class="switch" type="checkbox">
+            <h3>Size</h3>
+            <div class="dropdown-box__body">
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Flower</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Pre-Roll Flower</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Pre-Roll Infused</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Pre-Roll Leaf</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Shake</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Smalls</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Trim</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Keef</span>
+              </label>
+              <label>
+                <input class="checkbox" type="checkbox">
+                <var class="checker"></var>
+                <span>Fresh Frozen</span>
+              </label>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>

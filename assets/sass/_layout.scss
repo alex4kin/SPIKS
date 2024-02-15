@@ -1,0 +1,575 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family-bold;
+  font-size: 16px;
+  color: $color-body;
+  min-width: 1024px;
+  background-color: $bg-primary;
+}
+
+header,
+main,
+footer {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+
+  &>section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    max-width: 1530px;
+    padding: 20px 20px 0 20px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1529px) {
+      min-width: 100%;
+    }
+  }
+}
+
+h3 {
+  font-family: $font-family-regular;
+  font-size: 18px;
+  color: $color-body;
+}
+
+header {
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 16px;
+
+    .header__search {
+      width: 464px;
+      height: 48px;
+      position: relative;
+
+      &::before {
+        content: url(../img/icon-search.png);
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 22px;
+        top: 50%;
+        margin-top: -10px;
+      }
+
+      .header__search-input {
+        width: 100%;
+        height: 99%;
+        border: 1px solid $color-passive;
+        border-radius: 12px;
+        outline: none;
+        background-color: transparent;
+        color: $color-body;
+        padding: 0 22px 0 52px;
+        font-size: 16px;
+        font-family: $font-family-bold;
+      }
+    }
+  }
+}
+
+footer {
+  .container {
+    padding-bottom: 30px;
+  }
+}
+
+// Buttons
+.btn-primary {
+  position: relative;
+  display: inline-block;
+  height: 48px;
+  width: auto;
+  padding: 1px;
+  margin: 0 16px 0 0;
+  font-family: $font-family-bold;
+  font-size: 16px;
+  color: $color-body;
+  @include bg-btn-primary;
+  border-radius: 10px;
+  border: none;
+  @include hover-transition;
+
+  span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 46px;
+    padding: 0 22px 0 56px;
+    line-height: 46px;
+    background-color: $bg-secondary;
+    border-radius: 10px;
+    @include hover-transition;
+
+    &::after {
+      content: url(../img/icon-flower.png);
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      margin-top: -10px;
+      line-height: 1;
+    }
+  }
+
+  &:hover,
+  &.active {
+    cursor: pointer;
+    @include btn-shadow;
+
+    span {
+      background-color: $bg-primary;
+    }
+  }
+
+  &.active {
+    cursor: default;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  h3 {
+    line-height: 24px;
+  }
+}
+
+// aside
+.classification {
+  display: block;
+  min-height: 400px;
+  width: 240px;
+  background: $bg-secondary url(../img/bg-leaf.png) 0 center no-repeat;
+  background-size: auto;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  padding: 15px 18px;
+}
+
+// price-range
+.price-range {
+  &>.d-flex {
+    justify-content: space-between;
+  }
+}
+
+// Filter category button
+.filter-category {
+  display: block;
+  position: relative;
+  opacity: .6;
+  cursor: pointer;
+  @include hover-transition;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+  }
+
+  .filter-popup {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    display: block;
+    width: 220px;
+    height: 0;
+    overflow: hidden;
+    font-family: $font-family-light;
+    line-height: 1.35;
+    background: $bg-secondary;
+    border-radius: 10px;
+    @include hover-transition;
+    opacity: 0;
+
+    &:target {
+      height: auto;
+      opacity: 1;
+    }
+
+    a.btn-close {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      height: 20px;
+      text-align: right;
+      padding: 4px 10px 0 0;
+      color: $color-element;
+    }
+
+    .wrapper {
+      padding: 20px;
+      cursor: default;
+    }
+  }
+}
+
+.filter__list {
+
+  .filter__list-item {
+    position: relative;
+    line-height: 22px;
+    margin: 12px 0;
+    padding: 0 0 0 30px;
+    font-family: $font-family-light;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-body;
+    cursor: pointer;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.date::before {
+      content: url(../img/icon-calendar.png);
+    }
+
+    &.price-h::before {
+      content: url(../img/icon-arrow-up.png);
+    }
+
+    &.price-l::before {
+      content: url(../img/icon-arrow-down.png);
+    }
+
+    &.thc-h::before {
+      content: url(../img/icon-thc-up.png);
+      left: -8px;
+    }
+
+    &.thc-l::before {
+      content: url(../img/icon-thc-down.png);
+      top: 8px;
+    }
+
+    &.cbd-h::before {
+      content: url(../img/icon-cbd-up.png);
+      left: -8px;
+    }
+
+    &.cbd-l::before {
+      content: url(../img/icon-cbd-down.png);
+      top: 8px;
+    }
+
+    a {
+      color: $color-body;
+      text-decoration: none;
+      padding-left: 30px;
+    }
+  }
+}
+
+// Data view
+.data-view {
+  column-gap: 25px;
+
+  .data-view__item {
+    position: relative;
+    font-family: $font-family-light;
+    font-size: 16px;
+    color: $color-body;
+
+    h5 {
+      display: block;
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.roller {
+  display: block;
+  position: relative;
+  width: 224px;
+  height: 18px;
+  padding-top: 7px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background: linear-gradient(to right, #ade372, #90d447);
+    rotate: 30deg;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
+  &+.info {
+    justify-content: space-between;
+    margin-top: 12px;
+
+    .info__box {
+      display: inline-block;
+      padding: 5px;
+      line-height: 18px;
+      border-radius: 3px;
+      border: 1px solid $bg-tooltip;
+      background-color: $bg-secondary;
+
+      &.unactive {
+        color: $color-passive;
+      }
+
+      &:empty {
+        opacity: 0;
+        padding: 0;
+        width: 0;
+      }
+    }
+  }
+}
+
+.line-box {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: $bg-tooltip;
+
+  .line {
+    display: block;
+    position: relative;
+    height: 4px;
+    min-width: 1%;
+    max-width: 100%;
+    background-color: $color-element;
+
+    .tooltip {
+      display: none;
+      padding: 4px;
+      border-radius: 3px;
+      background-color: $bg-tooltip;
+      position: absolute;
+      bottom: 1.5em;
+      right: -7px;
+
+      &:target {
+        display: block;
+      }
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid $bg-tooltip;
+        display: block;
+        position: absolute;
+        bottom: -8px;
+        right: 10px;
+      }
+    }
+
+    .roll {
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 100%;
+      background: linear-gradient(to right, #ade372, #90d447);
+      rotate: 30deg;
+      position: absolute;
+      right: 0;
+      top: -7px;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.filters-view {
+  &>.container {
+    align-items: center;
+    column-gap: 10px;
+
+    h6 {
+      display: inline-block;
+      padding-right: 30px;
+    }
+  }
+
+  .filter-value {
+    position: relative;
+    display: inline-block;
+    padding: 0 26px 0 8px;
+    line-height: 28px;
+    background-color: $bg-filter-value;
+    color: $color-body;
+    font-family: $font-family-light;
+    border-radius: 14px;
+
+    &::after {
+      content: "X";
+      display: block;
+      font-size: 9px;
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      margin-top: -6px;
+      color: $color-body;
+      border: 1px solid $color-body;
+      border-radius: 50%;
+      background-color: #55a344;
+      width: 12px;
+      height: 12px;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+
+
+// Dropdown
+.dropdown-box {
+  position: relative;
+
+  h3 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 12px 0 3px 0;
+
+    &::after {
+      content: url(../img/icon-shevron-up.png);
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 45%;
+      line-height: 0;
+      rotate: 180deg;
+    }
+  }
+
+  &:first-of-type h3 {
+    margin-top: 0;
+  }
+
+  input.switch {
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    @include hover-transition;
+    cursor: pointer;
+
+    &:checked+h3::after {
+      rotate: 0deg;
+    }
+
+    &:checked+h3+.dropdown-box__body {
+      display: block;
+      height: auto;
+    }
+  }
+
+  .dropdown-box__body {
+    display: none;
+    height: 0;
+    overflow: hidden;
+
+    label {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 12px 0;
+      font-family: $font-family-light;
+      color: $color-passive;
+
+      .checkbox:checked~span {
+        color: $color-body;
+      }
+
+      .checkbox {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        position: absolute;
+        z-index: 5;
+        margin: 0 8px 0 0;
+        padding: 0;
+        opacity: 0;
+      }
+
+      .checker {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 8px 0 0;
+        padding: 0;
+        border: 1px solid #9a9aa1;
+        border-radius: 2px;
+        background: transparent;
+
+        &::after {
+          content: url(../img/icon-checked.png);
+          display: none;
+          position: relative;
+          top: -2px;
+        }
+
+        img {
+          display: block;
+          width: 11px;
+          height: 10px;
+          display: none;
+        }
+      }
+
+      .checkbox:checked~.checker {
+        background: linear-gradient(to right, #ade372, #90d447);
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+// main {
+//   min-height: 100%;
+//   background: transparent url(#{$path-img}alpaca.png) center center no-repeat;
+//   background-size: cover;
+// }
+
+// @media only screen and (max-width: 1024px) {}

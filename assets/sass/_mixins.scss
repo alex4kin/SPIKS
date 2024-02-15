@@ -1,0 +1,11 @@
+@mixin hover-transition {
+  transition: all ease-in-out 400ms;
+}
+
+@mixin btn-shadow {
+  box-shadow: 0 3px 15px rgba(132, 213, 44, .2);
+}
+
+@mixin bg-btn-primary {
+  background: linear-gradient(to bottom, #526f3a, #3a423d);
+}
